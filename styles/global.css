@@ -34,7 +34,12 @@ input,
 textarea {
   font-size: clamp(14px, 1.6rem, 2vw);
   font-family: 'Open Sans', sans-serif;
-  /*font-family: 'Poppins', sans-serif;*/
+  font-family: 'Poppins', sans-serif;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .sr-only {
@@ -47,4 +52,53 @@ textarea {
   clip-path: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* input */
+
+button, input, .button {
+  height: 5rem;
+  border-radius: .8rem;
+}
+
+button, .button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  line-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--blue);
+  color: var(--white);
+
+  transition: filter .45s;
+  cursor: pointer;
+}
+
+button:hover, .button:hover {
+  filter: brightness(1.2);
+}
+
+button > img
+.button > img {
+  margin-right: 1rem;
+  width: 2rem;
+}
+
+button.outlined,
+.button.outlined {
+  background: var(--white);
+  color: var(--blue);
+  border: .2rem solid var(--blue);
+}
+
+.content header {
+  width: 80%;
+  margin: 3.5rem auto;
+}
+
+.content header img {
+  width: 16.7rem;
 }
