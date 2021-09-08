@@ -7,6 +7,7 @@
   
   <link rel="stylesheet" href="/styles/room.css">
   <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/modal.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +21,7 @@
  <body>
 
   <div class="content" id="room">
+
     <header>
       <a href="/home.html">
         <img src="/public/images/logo.svg" alt="logo do site">
@@ -40,6 +42,7 @@
     </header>
 
     <main>
+
       <section id="question-form">
         <h2>Faça sua pergunta</h2>
         <form action="">
@@ -60,10 +63,11 @@
         <h2 class="sr-only">Perguntas da comunidade</h2>
 
         <div class="quetions">
+
           <div class="question-wrapper">
             <div class="question-content">
               <div class="user">
-                <img src="/public/images/avatar.svg" alt="avatar">
+                <img src="/public/images/user.svg" alt="avatar">
               </div>
               <div class="question">
                 <p>Qual a diferença entre const e let no Javacript</p>
@@ -80,10 +84,93 @@
               </a>
             </div>
           </div>
+
+          <div class="question-wrapper">
+            <div class="question-content">
+              <div class="user">
+                <img src="/public/images/user.svg" alt="avatar">
+              </div>
+              <div class="question">
+                <p>O que é Javacript</p>
+              </div>
+            </div>
+            <div class="actions">
+              <a href="#" class="check">
+                <img src="/public/images/check.svg" alt="marcar como lida">
+                Marcar como lida
+              </a>
+              <a href="#" class="delete">
+                <img src="/public/images/trash.svg" alt="excluir">
+                Excluir
+              </a>
+            </div>
+          </div>
+
+          <div class="question-wrapper">
+            <div class="question-content">
+              <div class="user">
+                <img src="/public/images/user.svg" alt="avatar">
+              </div>
+              <div class="question">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                   Dolorem asperiores similique cum necessitatibus, natus possimus magni et delectus, 
+                   officia rem esse doloremque tenetur in perferendis velit saepe eaque, voluptate numquam?</p>
+              </div>
+            </div>
+            <div class="actions">
+              <a href="#" class="check">
+                <img src="/public/images/check.svg" alt="marcar como lida">
+                Marcar como lida
+              </a>
+              <a href="#" class="delete">
+                <img src="/public/images/trash.svg" alt="excluir">
+                Excluir
+              </a>
+            </div>
+          </div>
+
+          <div class="question-wrapper read">
+            <div class="question-content">
+              <div class="user">
+                <img src="/public/images/user.svg" alt="avatar">
+              </div>
+              <div class="question">
+                <p>Qual a diferença entre map, reduce e filter no Javacript</p>
+              </div>
+            </div>
+            <div class="actions">
+              
+              <a href="#" class="delete">
+                <img src="/public/images/trash.svg" alt="excluir">
+                Excluir
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 
     </main>
+  </div>
+
+  <!--  Modal  -->
   
+  <div class="modal-wrapper">
+    <div class="modal">
+      <h2>Excluir</h2>
+      <p>Tem certeza que você deseja excluir esta pergunta?</p>
+
+      <form action="#">
+        <label for-id="password" class="sr-only">Digite sua senha admin</label>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha">
+
+        <div class="buttons">
+          <div class="button grey">Cancelar</div>
+          <button class="red">Sim, excluir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
  </body>
 </html>
