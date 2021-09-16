@@ -28,29 +28,35 @@ Trace:
 
 npm manifest: 
   {
-    "name": "discoverNlw6",
-    "version": "1.0.0",
-    "description": "Projeto para gerenciar perguntas anonimas de usuários.",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Fabioaguero/discoverNlw6.git"
-    },
-    "keywords": [],
-    "author": "Fábio Agüero",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/Fabioaguero/discoverNlw6/issues"
-    },
-    "homepage": "https://github.com/Fabioaguero/discoverNlw6#readme",
-    "dependencies": {
-      "ejs": "^3.1.6",
-      "express": "^4.17.1"
-    }
+  "name": "discoverNlw6",
+  "version": "1.0.0",
+  "description": "Projeto para gerenciar perguntas anonimas de usuários.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon .",
+    "init-db": "node src/db/init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fabioaguero/discoverNlw6.git"
+  },
+  "keywords": [],
+  "author": "Fábio Agüero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fabioaguero/discoverNlw6/issues"
+  },
+  "homepage": "https://github.com/Fabioaguero/discoverNlw6#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
+}
 
 yarn manifest: 
   No manifest
