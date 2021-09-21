@@ -7,9 +7,26 @@ module.exports = {
     const questionId = req.params.question
     const action = req.params.action
     const password = req.body.password
-     console.log(`room = ${roomId}, questionId = ${questionId}
-     action = ${action}, password = ${password}`)
-  },
+     
+
+    const verifyRoom = await db.get(`SELECT * FROM rooms WHERE id = ${roomId}`)
+    if(verifyRoom.pass == password) {
+      if(action == "delete"){
+
+        await db.run(`DELETE FROM quetions WHERE id = ${questionId}`)
+      
+      } else if(action == "check"){
+
+        await db.run(`UPDATE quetions SET id = 1 WHERE id = ${question}`)
+      }
+      
+      res.redirect(`/room/${roomId}`)
+    } else {
+      res.render('passincorrect', {roomId: roomId})
+    }
+   
+    
+  } ,
 
   create (req, res) {
     const db = await Database()
@@ -21,7 +38,7 @@ module.exports = {
       roomID,
       read,
     )VALUES(
-      ${question},
+      "${question}",
       ${roomId},
       0
     )`)

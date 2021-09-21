@@ -34,7 +34,7 @@
           #<%= roomId %>
           <img src="/public/images/copy.svg" alt="copy number room">
         </div>
-        <a href="#" class="button">
+        <a href="/create-pass" class="button">
           <img src="/public/images/users-white.svg" alt="criar uma sala">
           Criar Sala
         </a>
@@ -64,88 +64,62 @@
 
         <div class="quetions">
 
-          <div class="question-wrapper">
-            <div class="question-content">
-              <div class="user">
-                <img src="/public/images/user.svg" alt="avatar">
-              </div>
-              <div class="question">
-                <p>Qual a diferença entre const e let no Javacript</p>
-              </div>
-            </div>
-            <div class="actions">
-              <a href="#" class="check" data-id="2">
-                <img src="/public/images/check.svg" alt="marcar como lida">
-                Marcar como lida
-              </a>
-              <a href="#" class="delete" data-id="2">
-                <img src="/public/images/trash.svg" alt="excluir">
-                Excluir
-              </a>
-            </div>
-          </div>
+          <% if (isNoQuestions){ %>
+            <%- include('parts/no-questions')%>
+          <%}%>
 
-          <div class="question-wrapper">
-            <div class="question-content">
-              <div class="user">
-                <img src="/public/images/user.svg" alt="avatar">
-              </div>
-              <div class="question">
-                <p>O que é Javacript</p>
-              </div>
-            </div>
-            <div class="actions">
-              <a href="#" class="check" data-id="3">
-                <img src="/public/images/check.svg" alt="marcar como lida">
-                Marcar como lida
-              </a>
-              <a href="#" class="delete" data-id="3">
-                <img src="/public/images/trash.svg" alt="excluir">
-                Excluir
-              </a>
-            </div>
-          </div>
 
-          <div class="question-wrapper">
-            <div class="question-content">
-              <div class="user">
-                <img src="/public/images/user.svg" alt="avatar">
-              </div>
-              <div class="question">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                   Dolorem asperiores similique cum necessitatibus, natus possimus magni et delectus, 
-                   officia rem esse doloremque tenetur in perferendis velit saepe eaque, voluptate numquam?</p>
-              </div>
-            </div>
-            <div class="actions">
-              <a href="#" class="check" data-id="4">
-                <img src="/public/images/check.svg" alt="marcar como lida">
-                Marcar como lida
-              </a>
-              <a href="#" class="delete" data-id="4">
-                <img src="/public/images/trash.svg" alt="excluir">
-                Excluir
-              </a>
-            </div>
-          </div>
+          <% questions.forEach(question => { %>
 
-          <div class="question-wrapper read">
-            <div class="question-content">
-              <div class="user">
-                <img src="/public/images/user.svg" alt="avatar">
+            <div class="question-wrapper">
+              <div class="question-content">
+                <div class="user">
+                  <img src="/public/images/user.svg" alt="avatar">
+                </div>
+                <div class="question">
+                  <p><%= question.title%></p>
+                </div>
               </div>
-              <div class="question">
-                <p>Qual a diferença entre map, reduce e filter no Javacript</p>
+              <div class="actions">
+                <a href="#" class="check" data-id="<%=question.id%>">
+                  <img src="/public/images/check.svg" alt="marcar como lida">
+                  Marcar como lida
+                </a>
+                <a href="#" class="delete" data-id="<%=question.id%>">
+                  <img src="/public/images/trash.svg" alt="excluir">
+                  Excluir
+                </a>
               </div>
             </div>
-            <div class="actions">
-              
-              <a href="#" class="delete" data-id="1">
-                <img src="/public/images/trash.svg" alt="excluir">
-                Excluir
-              </a>
+          
+          <% });  %>
+
+          <% questionsRead.forEach(questionRead => {%>
+
+            <div class="question-wrapper read">
+              <div class="question-content">
+                <div class="user">
+                  <img src="/public/images/user.svg" alt="avatar">
+                </div>
+                <div class="question">
+                  <p><%= questionRead.title%> ></p>
+                </div>
+              </div>
+              <div class="actions">
+                
+                <a href="#" class="delete" data-id="<%=questionRead.id%>">
+                  <img src="/public/images/trash.svg" alt="excluir">
+                  Excluir
+                </a>
+              </div>
             </div>
-          </div>
+          
+          
+          <% }); %> 
+
+          
+
+          
 
         </div>
       </section>
